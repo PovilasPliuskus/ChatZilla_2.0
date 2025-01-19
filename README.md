@@ -16,3 +16,4 @@ Requirements:
    2. password `1234`
    3. ports `5432`
 5. Run `dotnet ef database update`
+6. Run `DummyData.sql` script in your database to check if everything is correct and have dummy data to work with.
