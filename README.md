@@ -15,5 +15,6 @@ Requirements:
    1. name `ChatZilla`
    2. password `1234`
    3. ports `5432`
-5. Run `dotnet ef database update`
-6. Run `DummyData.sql` script in your database to check if everything is correct and have dummy data to work with.
+5. Create MongoDb database called `ChatApp`.
+6. Run `dotnet ef database update`
+7. Run `DummyData.sql` script in your database to check if everything is correct and have dummy data to work with.
