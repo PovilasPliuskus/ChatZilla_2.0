@@ -1,7 +1,10 @@
 using ChatApp.Server.Data;
 using ChatApp.Server.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -11,6 +14,9 @@ builder.Services.AddSwaggerGen();
 
 // Add MongoDb context
 builder.Services.AddSingleton<MongoDbContext>();
+
+builder.Services.AddDbContext<PostgresDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 // Add Services
 builder.Services.AddSingleton<TestService>();
