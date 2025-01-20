@@ -10,6 +10,10 @@ namespace ChatApp.Server.Data
         }
         
         public DbSet<TestEntity> TestEntities { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Chat> Chats { get; set; }
+        public DbSet<ChatParticipants> ChatParticipants { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
