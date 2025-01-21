@@ -23,71 +23,49 @@ namespace ChatApp.Server.Data
 
                 entity.Property(e => e.Id)
                     .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("gen_random_uuid()")
                     .HasComment("Guid ID");
                 
                 entity.Property(e => e.CreatedAt)
                     .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
                     .HasComment("Timestamp when the record was created");
             });
 
             modelBuilder.Entity<UserEntity>(entity =>
             {
                 entity.Property(id => id.Id)
-                    .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("gen_random_uuid()");
+                    .IsRequired();
                 
                 entity.Property(ca => ca.CreatedAt)
                     .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
                     .HasComment("Timestamp when the record was created");
 
                 entity.Property(ma => ma.ModifiedAt)
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                    .ValueGeneratedOnUpdate()
                     .HasComment("Timestamp when the record was modified");
             });
 
             modelBuilder.Entity<ChatEntity>(entity =>
             {
                 entity.Property(id => id.Id)
-                    .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("gen_random_uuid()");
+                    .IsRequired();
                 
                 entity.Property(ca => ca.CreatedAt)
                     .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
                     .HasComment("Timestamp when the record was created");
 
                 entity.Property(ma => ma.ModifiedAt)
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                    .ValueGeneratedOnUpdate()
                     .HasComment("Timestamp when the record was modified");
             });
 
             modelBuilder.Entity<ChatParticipantsEntity>(entity =>
             {
                 entity.Property(id => id.Id)
-                    .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("gen_random_uuid()");
+                    .IsRequired();
                 
                 entity.Property(ja => ja.JoinedAt)
                     .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
                     .HasComment("Timestamp when the user joined the chat");
                 
                 entity.Property(ma => ma.ModifiedAt)
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                    .ValueGeneratedOnUpdate()
                     .HasComment("Timestamp when the record was modified");
 
                 entity.HasOne(u => u.UserEntity)
@@ -102,19 +80,13 @@ namespace ChatApp.Server.Data
             modelBuilder.Entity<MessageEntity>(entity =>
             {
                 entity.Property(id => id.Id)
-                    .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("gen_random_uuid()");
+                    .IsRequired();
                 
                 entity.Property(ca => ca.CreatedAt)
                     .IsRequired()
-                    .ValueGeneratedOnAdd()
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
                     .HasComment("Timestamp when the record was created");
                 
                 entity.Property(ma => ma.ModifiedAt)
-                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                    .ValueGeneratedOnUpdate()
                     .HasComment("Timestamp when the record was modified");
 
                 entity.HasOne(c => c.ChatEntity)

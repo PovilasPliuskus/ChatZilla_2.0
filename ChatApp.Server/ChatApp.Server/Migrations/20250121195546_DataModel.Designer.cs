@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatApp.Server.Migrations
 {
     [DbContext(typeof(PostgresDbContext))]
-    [Migration("20250120180009_DataModel")]
+    [Migration("20250121195546_DataModel")]
     partial class DataModel
     {
         /// <inheritdoc />
@@ -25,26 +25,21 @@ namespace ChatApp.Server.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.Chat", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.ChatEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
-                        .HasColumnName("Id")
-                        .HasDefaultValueSql("gen_random_uuid()");
+                        .HasColumnName("Id");
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("CreatedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was created");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .ValueGeneratedOnUpdate()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("ModifiedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was modified");
 
                     b.Property<string>("Name")
@@ -62,13 +57,12 @@ namespace ChatApp.Server.Migrations
                     b.ToTable("Chat");
                 });
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.ChatParticipants", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.ChatParticipantsEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
-                        .HasColumnName("Id")
-                        .HasDefaultValueSql("gen_random_uuid()");
+                        .HasColumnName("Id");
 
                     b.Property<Guid>("ChatId")
                         .HasColumnType("uuid")
@@ -79,10 +73,8 @@ namespace ChatApp.Server.Migrations
                         .HasColumnName("IsLeft");
 
                     b.Property<DateTime>("JoinedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("JoinedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the user joined the chat");
 
                     b.Property<DateTime?>("LeftAt")
@@ -90,10 +82,8 @@ namespace ChatApp.Server.Migrations
                         .HasColumnName("LeftAt");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .ValueGeneratedOnUpdate()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("ModifiedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was modified");
 
                     b.Property<Guid>("UserId")
@@ -113,30 +103,25 @@ namespace ChatApp.Server.Migrations
                     b.ToTable("ChatParticipants");
                 });
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.Message", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.MessageEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
-                        .HasColumnName("Id")
-                        .HasDefaultValueSql("gen_random_uuid()");
+                        .HasColumnName("Id");
 
                     b.Property<Guid>("ChatId")
                         .HasColumnType("uuid")
                         .HasColumnName("ChatId");
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("CreatedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was created");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .ValueGeneratedOnUpdate()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("ModifiedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was modified");
 
                     b.HasKey("Id");
@@ -152,7 +137,6 @@ namespace ChatApp.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("Id")
-                        .HasDefaultValueSql("gen_random_uuid()")
                         .HasComment("Guid ID");
 
                     b.Property<string>("Code")
@@ -161,10 +145,8 @@ namespace ChatApp.Server.Migrations
                         .HasColumnName("Code");
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("CreatedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was created");
 
                     b.HasKey("Id");
@@ -175,13 +157,12 @@ namespace ChatApp.Server.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.User", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
-                        .HasColumnName("Id")
-                        .HasDefaultValueSql("gen_random_uuid()");
+                        .HasColumnName("Id");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -190,10 +171,8 @@ namespace ChatApp.Server.Migrations
                         .HasColumnName("Code");
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("CreatedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was created");
 
                     b.Property<string>("Email")
@@ -207,10 +186,8 @@ namespace ChatApp.Server.Migrations
                         .HasColumnName("LastLogin");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .ValueGeneratedOnUpdate()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("ModifiedAt")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP")
                         .HasComment("Timestamp when the record was modified");
 
                     b.Property<string>("PasswordHash")
@@ -230,44 +207,44 @@ namespace ChatApp.Server.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.ChatParticipants", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.ChatParticipantsEntity", b =>
                 {
-                    b.HasOne("ChatApp.Server.Models.Entities.Chat", "Chat")
+                    b.HasOne("ChatApp.Server.Models.Entities.ChatEntity", "ChatEntity")
                         .WithMany("ChatParticipants")
                         .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ChatApp.Server.Models.Entities.User", "User")
+                    b.HasOne("ChatApp.Server.Models.Entities.UserEntity", "UserEntity")
                         .WithMany("ChatParticipants")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Chat");
+                    b.Navigation("ChatEntity");
 
-                    b.Navigation("User");
+                    b.Navigation("UserEntity");
                 });
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.Message", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.MessageEntity", b =>
                 {
-                    b.HasOne("ChatApp.Server.Models.Entities.Chat", "Chat")
+                    b.HasOne("ChatApp.Server.Models.Entities.ChatEntity", "ChatEntity")
                         .WithMany("Messages")
                         .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Chat");
+                    b.Navigation("ChatEntity");
                 });
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.Chat", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.ChatEntity", b =>
                 {
                     b.Navigation("ChatParticipants");
 
                     b.Navigation("Messages");
                 });
 
-            modelBuilder.Entity("ChatApp.Server.Models.Entities.User", b =>
+            modelBuilder.Entity("ChatApp.Server.Models.Entities.UserEntity", b =>
                 {
                     b.Navigation("ChatParticipants");
                 });
