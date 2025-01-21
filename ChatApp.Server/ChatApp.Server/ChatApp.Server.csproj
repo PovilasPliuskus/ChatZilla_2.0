@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <!--x-release-please-start-version-->
-        <Version>0.0.0</Version>
+        <Version>0.0.1</Version>
         <!--x-release-please-end-->
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -12,7 +12,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.1"/>
-        <PackageReference Include="MongoDB.Driver" Version="3.1.0" />
+        <PackageReference Include="MongoDB.Driver" Version="3.1.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
