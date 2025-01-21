@@ -1,0 +1,19 @@
+{
+  "packages": {
+    ".": {
+      "path": ".",
+      "changelog-path": "CHANGELOG.md",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": true,
+      "include-v-in-tag": false,
+      "release-type": "simple",
+      "extra-files": [
+        {
+          "type": "xml",
+          "path": "ChatApp.Server/ChatApp.Server/ChatApp.Server.csproj",
+          "xpath": "//Project/PropertyGroup/Version"
+        }
+      ]
+    }
+  }
+}
