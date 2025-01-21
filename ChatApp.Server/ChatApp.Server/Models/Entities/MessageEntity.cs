@@ -4,15 +4,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ChatApp.Server.Models.Entities
 {
     [Table("Message")]
-    public class Message
+    public class MessageEntity
     {
         [Key]
         [Column("Id")]
         public Guid Id { get; set; }
         
+        [Required]
         [Column("ChatId")]
         public Guid ChatId { get; set; }
         
+        [Required]
         [Column("CreatedAt")]
         public DateTime CreatedAt { get; set; }
         
@@ -20,6 +22,6 @@ namespace ChatApp.Server.Models.Entities
         public DateTime? ModifiedAt { get; set; }
         
         [ForeignKey(nameof(ChatId))]
-        public virtual Chat Chat { get; set; }
+        public virtual ChatEntity ChatEntity { get; set; }
     }
 }

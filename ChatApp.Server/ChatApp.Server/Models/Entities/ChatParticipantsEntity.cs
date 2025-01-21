@@ -4,24 +4,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ChatApp.Server.Models.Entities
 {
     [Table("ChatParticipants")]
-    public class ChatParticipants
+    public class ChatParticipantsEntity
     {
         [Key]
         [Column("Id")]
         public Guid Id { get; set; }
         
+        [Required]
         [Column("UserId")]
         public Guid UserId { get; set; }
         
+        [Required]
         [Column("ChatId")]
         public Guid ChatId { get; set; }
         
+        [Required]
         [Column("UserRole")]
         public int UserRole { get; set; }
         
+        [Required]
         [Column("JoinedAt")]
         public DateTime JoinedAt { get; set; }
         
+        [Required]
         [Column("IsLeft")]
         public byte IsLeft { get; set; }
         
@@ -32,9 +37,9 @@ namespace ChatApp.Server.Models.Entities
         public DateTime? ModifiedAt { get; set; }
         
         [ForeignKey(nameof(UserId))]
-        public virtual User User { get; set; }
+        public virtual UserEntity UserEntity { get; set; }
         
         [ForeignKey(nameof(ChatId))]
-        public virtual Chat Chat { get; set; }
+        public virtual ChatEntity ChatEntity { get; set; }
     }
 }

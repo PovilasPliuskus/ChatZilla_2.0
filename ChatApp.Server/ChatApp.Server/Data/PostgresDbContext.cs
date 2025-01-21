@@ -10,10 +10,10 @@ namespace ChatApp.Server.Data
         }
         
         public DbSet<TestEntity> TestEntities { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Chat> Chats { get; set; }
-        public DbSet<ChatParticipants> ChatParticipants { get; set; }
-        public DbSet<Message> Messages { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<ChatEntity> Chats { get; set; }
+        public DbSet<ChatParticipantsEntity> ChatParticipants { get; set; }
+        public DbSet<MessageEntity> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,7 @@ namespace ChatApp.Server.Data
                     .HasComment("Timestamp when the record was created");
             });
 
-            modelBuilder.Entity<User>(entity =>
+            modelBuilder.Entity<UserEntity>(entity =>
             {
                 entity.Property(id => id.Id)
                     .IsRequired()
@@ -53,7 +53,7 @@ namespace ChatApp.Server.Data
                     .HasComment("Timestamp when the record was modified");
             });
 
-            modelBuilder.Entity<Chat>(entity =>
+            modelBuilder.Entity<ChatEntity>(entity =>
             {
                 entity.Property(id => id.Id)
                     .IsRequired()
@@ -72,7 +72,7 @@ namespace ChatApp.Server.Data
                     .HasComment("Timestamp when the record was modified");
             });
 
-            modelBuilder.Entity<ChatParticipants>(entity =>
+            modelBuilder.Entity<ChatParticipantsEntity>(entity =>
             {
                 entity.Property(id => id.Id)
                     .IsRequired()
@@ -90,16 +90,16 @@ namespace ChatApp.Server.Data
                     .ValueGeneratedOnUpdate()
                     .HasComment("Timestamp when the record was modified");
 
-                entity.HasOne(u => u.User)
+                entity.HasOne(u => u.UserEntity)
                     .WithMany(u => u.ChatParticipants)
                     .HasForeignKey(fk => fk.UserId);
 
-                entity.HasOne(c => c.Chat)
+                entity.HasOne(c => c.ChatEntity)
                     .WithMany(c => c.ChatParticipants)
                     .HasForeignKey(fk => fk.ChatId);
             });
 
-            modelBuilder.Entity<Message>(entity =>
+            modelBuilder.Entity<MessageEntity>(entity =>
             {
                 entity.Property(id => id.Id)
                     .IsRequired()
@@ -117,7 +117,7 @@ namespace ChatApp.Server.Data
                     .ValueGeneratedOnUpdate()
                     .HasComment("Timestamp when the record was modified");
 
-                entity.HasOne(c => c.Chat)
+                entity.HasOne(c => c.ChatEntity)
                     .WithMany(m => m.Messages)
                     .HasForeignKey(fk => fk.ChatId);
             });
