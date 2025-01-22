@@ -18,3 +18,15 @@ Requirements:
 5. Create MongoDb database called `ChatApp`.
 6. Run `dotnet ef database update`
 7. Run `DummyData.sql` script in your database to check if everything is correct and have dummy data to work with.
+
+## Conventional Commits
+
+The following commit types are used:
+
+- **fix**: A bug fix
+- **feat**: A new feature
+- **BREAKING CHANGE**: A breaking change
+
+### Examples
+
+- **feat**: Add a new login page
