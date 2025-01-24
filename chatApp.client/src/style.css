@@ -38,6 +38,14 @@
   }
 }
 
+.header-image {
+  width: 70%;
+  height: auto;
+  margin-top: 10%;
+  display: block;
+  margin-left: 50%;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -53,6 +61,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #e7ecef !important;
 }
 
 h1 {
