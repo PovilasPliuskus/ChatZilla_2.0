@@ -67,6 +67,34 @@
   font-family: "Work Sans", sans-serif;
 }
 
+.link-button {
+  display: inline-block;
+  font-weight: 600;
+  color: #5e978e;
+  background-color: #f9f9f9;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.link-button:hover {
+  background-color: #bac978;
+  color: #5e978e;
+  transform: translateY(-2px);
+}
+
+.link-button:active {
+  background-color: #94c978;
+  transform: translateY(0);
+}
+
+.link-button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

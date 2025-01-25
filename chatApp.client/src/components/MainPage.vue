@@ -12,6 +12,9 @@ import "../styles/formKitStyle.css";
         <FormKit type="password" label="Password" validation="required" />
         <button type="submit" class="formkit-button">Sign In</button>
       </FormKit>
+      <router-link to="/SignIn" class="link-button">
+        Not a dino-mite member?<br />Click here to create an account!
+      </router-link>
     </div>
     <img
       src="../assets/img/ChatZilla-main-image.jpg"
