@@ -10,7 +10,7 @@
       "extra-files": [
         {
           "type": "xml",
-          "path": "ChatApp.Server/ChatApp.Server/ChatApp.Server.csproj",
+          "path": "ChatZilla.API/ChatZilla.API/ChatZilla.API.csproj",
           "xpath": "//Project/PropertyGroup/Version"
         }
       ]
