@@ -1,24 +1,17 @@
-using ChatZilla.API.Data;
-using ChatZilla.API.Services;
-using Microsoft.EntityFrameworkCore;
+using ChatZilla.API;
+using ChatZilla.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services
+    .BuildUserDiModule(connectionString ?? throw new ArgumentNullException(nameof(connectionString)))
+    .BuildApiDiModule();
 
-// Add MongoDb context
-builder.Services.AddScoped<MongoDbContext>();
-
-builder.Services.AddDbContext<PostgresDbContext>(options =>
-    options.UseNpgsql(connectionString));
-
-// Add Services
-builder.Services.AddTransient<TestService>();
+// I think the Notification module is the only one using mongoDb, so this should probably go there.
+// Commenting it out for now.
+// builder.Services.AddScoped<MongoDbContext>();
 
 var app = builder.Build();
 

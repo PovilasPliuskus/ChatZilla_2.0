@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatZilla.API", "ChatZilla.API\ChatZilla.API.csproj", "{02B95211-13EE-4448-996C-364200901661}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatZilla.User", "ChatZilla.User\ChatZilla.User.csproj", "{72D6810F-E52D-4022-8E64-1995C0897941}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{02B95211-13EE-4448-996C-364200901661}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02B95211-13EE-4448-996C-364200901661}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B95211-13EE-4448-996C-364200901661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D6810F-E52D-4022-8E64-1995C0897941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D6810F-E52D-4022-8E64-1995C0897941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D6810F-E52D-4022-8E64-1995C0897941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D6810F-E52D-4022-8E64-1995C0897941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
