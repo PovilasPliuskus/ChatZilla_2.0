@@ -1,0 +1,55 @@
+.formkit-input {
+  width: 100% !important;
+  padding: 12px 16px !important;
+  border: 2px solid #bac978 !important;
+  border-radius: 5px !important;
+  font-size: 1rem !important;
+  font-family: "Inter", sans-serif !important;
+  background-color: #fff !important;
+  transition: border-color 0.3s, box-shadow 0.3s !important;
+}
+
+.formkit-input:focus {
+  outline: none !important;
+  border-color: #5e978e !important;
+  box-shadow: 0 0 5px rgba(94, 151, 142, 0.5) !important;
+}
+
+.formkit-label {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 5px !important;
+  color: #213547 !important;
+}
+
+.formkit-input:hover {
+  border-color: #5e978e !important;
+}
+
+.formkit-button {
+  background-color: #5e978e !important;
+  color: white !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s, transform 0.2s !important;
+}
+
+.formkit-button:hover {
+  background-color: #bac978 !important;
+  transform: translateY(-2px) !important;
+}
+
+.formkit-button:active {
+  background-color: #94c978 !important;
+  transform: translateY(0) !important;
+}
+
+.formkit-message {
+  font-size: 0.875rem !important;
+  color: #d32f2f !important;
+  margin-top: 5px !important;
+}
