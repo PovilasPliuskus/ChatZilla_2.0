@@ -1,7 +1,7 @@
-using ChatApp.Server.Models.Entities;
+using ChatZilla.API.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChatApp.Server.Data
+namespace ChatZilla.API.Data
 {
     public class PostgresDbContext : DbContext
     {

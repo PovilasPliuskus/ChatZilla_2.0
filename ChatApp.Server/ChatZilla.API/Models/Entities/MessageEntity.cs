@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ChatApp.Server.Models.Entities
+namespace ChatZilla.API.Models.Entities
 {
     [Table("Message")]
     public class MessageEntity

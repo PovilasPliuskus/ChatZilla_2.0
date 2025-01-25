@@ -1,7 +1,7 @@
-using ChatApp.Server.Data;
+using ChatZilla.API.Data;
 using MongoDB.Driver;
 
-namespace ChatApp.Server.Services
+namespace ChatZilla.API.Services
 {
     public class TestService
     {

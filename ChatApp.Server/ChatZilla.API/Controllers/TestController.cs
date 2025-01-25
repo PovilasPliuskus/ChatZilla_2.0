@@ -1,7 +1,7 @@
-using ChatApp.Server.Services;
+using ChatZilla.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ChatApp.Server.Controllers
+namespace ChatZilla.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,4 +1,4 @@
-namespace ChatApp.Server.Models.Enums
+namespace ChatZilla.API.Models.Enums
 {
     public enum UserRoleEnum
     {

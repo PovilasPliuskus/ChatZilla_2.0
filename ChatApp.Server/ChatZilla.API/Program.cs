@@ -1,5 +1,5 @@
-using ChatApp.Server.Data;
-using ChatApp.Server.Services;
+using ChatZilla.API.Data;
+using ChatZilla.API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
