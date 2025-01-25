@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatApp.Server.Migrations
 {
     [DbContext(typeof(PostgresDbContext))]
-    [Migration("20250121195546_DataModel")]
+    [Migration("20250125121016_DataModel")]
     partial class DataModel
     {
         /// <inheritdoc />
