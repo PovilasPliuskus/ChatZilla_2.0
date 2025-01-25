@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
-namespace ChatApp.Server.Models.Entities
+namespace ChatZilla.API.Models.Entities
 {
     [Table("Chat")]
     public class ChatEntity

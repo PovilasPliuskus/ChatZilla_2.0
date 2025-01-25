@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace ChatApp.Server.Data
+namespace ChatZilla.API.Data
 {
     public class MongoDbContext
     {

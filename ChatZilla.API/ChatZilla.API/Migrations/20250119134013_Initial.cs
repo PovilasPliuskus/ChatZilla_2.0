@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ChatApp.Server.Migrations
+namespace ChatZilla.API.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
