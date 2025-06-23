@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/PovilasPliuskus/ChatZilla_2.0/compare/0.0.2...0.0.3) (2025-06-23)
+
+
+### Bug Fixes
+
+* Tasks/front end main page ([#6](https://github.com/PovilasPliuskus/ChatZilla_2.0/issues/6)) ([91a22af](https://github.com/PovilasPliuskus/ChatZilla_2.0/commit/91a22af19e8db68fa205812c3338a65786dc6f94))
+
 ## [0.0.2](https://github.com/PovilasPliuskus/ChatZilla_2.0/compare/0.0.1...0.0.2) (2025-01-23)
 
 
